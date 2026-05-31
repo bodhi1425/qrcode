@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#edece8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>二维码生成器 — 带 logo、自定义样式、永不过期，免费在线生成 | bodhi.tools</title>
+  <meta name="description" content="免费在线二维码生成器：输入网址 / 文字即时生成二维码，支持中心 logo、自定义前景背景色、码点样式，下载高清 PNG 或矢量 SVG。内容直接编码、不经服务器、永久有效，本地生成不上传、无水印、不限次数。" />
+  <meta name="keywords" content="二维码生成器,在线二维码,二维码制作,带logo二维码,二维码美化,免费二维码,网址转二维码,二维码下载,二维码不过期,静态二维码,QR码生成" />
+  <link rel="canonical" href="https://qrcode.bodhi.tools/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="二维码生成器 — 带 logo、自定义样式、永不过期" />
+  <meta property="og:description" content="输入网址 / 文字即时生成可自定义颜色、样式、logo 的二维码，内容直接编码、不经服务器、永久有效，本地生成不上传。" />
+  <meta property="og:url" content="https://qrcode.bodhi.tools/" />
+  <meta name="twitter:card" content="summary" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"二维码生成器","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"},"description":"输入网址 / 文字即时生成可自定义颜色、样式、logo 的二维码，内容直接编码、不经服务器、永久有效，本地生成不上传、可下载 PNG / SVG。"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"怎么免费生成二维码?","acceptedAnswer":{"@type":"Answer","text":"在输入框填网址或文字，二维码会实时生成。可换前景 / 背景色、码点样式、加中心 logo，然后下载高清 PNG 或矢量 SVG。免费、无水印、不限次数、无需注册。"}},{"@type":"Question","name":"生成的二维码会过期吗?","acceptedAnswer":{"@type":"Answer","text":"不会。这里生成的是静态二维码——你的网址 / 文字被直接编码进图片本身，扫描时不经过任何中转服务器，所以永久有效，即使本站关闭，已下载的二维码照样能扫。这和很多平台的“活码”（指向它家服务器再跳转、停服或收费后失效）不同。"}},{"@type":"Question","name":"能加 logo 吗?加了还能扫出来吗?","acceptedAnswer":{"@type":"Answer","text":"能。上传方形 logo 会合成到二维码中心，并自动把容错等级提到最高（H），多数情况仍可正常扫描。建议 logo 不要过大、前景与背景对比足够，生成后用手机实扫一下确认。"}},{"@type":"Question","name":"我输入的内容和 logo 会被上传吗?","acceptedAnswer":{"@type":"Answer","text":"不会。二维码完全在你的浏览器本地生成，输入的网址 / 文字和上传的 logo 都不会发送到服务器，适合内部链接、内网地址等敏感内容。"}}]}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="二维码生成器 首页">
+        <span class="seal-mark" aria-hidden="true"><span>码</span></span>
+        <span><b>二维码生成</b><span class="sub mono">QR · BODHI.TOOLS</span></span>
+      </a>
+      <span class="trust" title="二维码在你的浏览器本地生成">
+        <span class="dot" aria-hidden="true"></span>
+        <span><span class="t-full">本地生成 · </span>永不过期</span>
+      </span>
+      <nav class="links" aria-label="导航">
+        <a href="https://bodhi.tools/tools">更多工具</a><a href="#how">原理</a><a href="#faq">常见问题</a>
+      </nav>
+    </div>
+  </header>
+
+  <a href="https://bodhi.tools" class="home-fab" aria-label="返回 bodhi.tools 主页">← bodhi.tools</a>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="kicker">QR · 本地生成</span>
+          <h1>二维码生成器,<br><em>带 logo、永不失效</em></h1>
+          <p class="lead">输入网址或文字即时生成,可自定义颜色、码点样式、加中心 logo。内容直接编码进图片——<strong>不经服务器、永久有效</strong>,下载高清 PNG 或矢量 SVG。免费、无水印、不限次数。</p>
+          <div class="badges">
+            <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>永久有效</span>
+            <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>带 Logo</span>
+            <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>PNG · SVG</span>
+            <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 7.5 8 10 4.5-2.5 8-5 8-10V6l-8-4Z"/></svg>不上传</span>
+          </div>
+        </div>
+        <div class="seal" aria-hidden="true">
+          <div><div class="s-top">URL / TEXT →</div><div class="s-main">码</div><div class="s-bot">ON-DEVICE</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="workspace" id="tool">
+      <div class="ws-head">
+        <h2>二维码生成器</h2>
+        <p>输入内容即时预览,可换色、改样式、加 logo。全程在浏览器本地生成,内容与 logo 都不上传。</p>
+      </div>
+      <div class="qr-studio">
+        <div class="qr-controls">
+          <div class="field">
+            <label for="qrText">内容(网址 / 文字)</label>
+            <textarea id="qrText" rows="2" placeholder="https://bodhi.tools 或任意文字、电话、Wi-Fi 信息…">https://bodhi.tools</textarea>
+          </div>
+          <div class="field">
+            <label>配色</label>
+            <div class="swatches" id="swatches">
+              <button class="swatch" type="button" data-fg="#131313" data-bg="#ffffff" style="--a:#131313;--b:#ffffff" aria-pressed="true" title="经典黑白"></button>
+              <button class="swatch" type="button" data-fg="#d63ad9" data-bg="#ffffff" style="--a:#d63ad9;--b:#ffffff" aria-pressed="false" title="电光品红"></button>
+              <button class="swatch" type="button" data-fg="#1f3a8a" data-bg="#eef2ff" style="--a:#1f3a8a;--b:#eef2ff" aria-pressed="false" title="靛蓝"></button>
+              <button class="swatch" type="button" data-fg="#1f6b3b" data-bg="#eefaf0" style="--a:#1f6b3b;--b:#eefaf0" aria-pressed="false" title="墨绿"></button>
+              <button class="swatch" type="button" data-fg="#b5362c" data-bg="#fbeae8" style="--a:#b5362c;--b:#fbeae8" aria-pressed="false" title="朱砂"></button>
+              <button class="swatch" type="button" data-fg="#20201c" data-bg="#f3e9d8" style="--a:#20201c;--b:#f3e9d8" aria-pressed="false" title="暖褐"></button>
+            </div>
+            <div class="color-pickers">
+              <label class="cp">前景<input type="color" id="fg" value="#131313" /></label>
+              <label class="cp">背景<input type="color" id="bg" value="#ffffff" /></label>
+            </div>
+          </div>
+          <div class="field">
+            <label>码点样式</label>
+            <div class="segmented" id="dotSeg">
+              <button type="button" data-dot="square" aria-pressed="false">方块</button>
+              <button type="button" data-dot="rounded" aria-pressed="true">圆角</button>
+              <button type="button" data-dot="dots" aria-pressed="false">圆点</button>
+              <button type="button" data-dot="classy" aria-pressed="false">典雅</button>
+            </div>
+          </div>
+          <div class="field">
+            <label>中心 Logo(可选)</label>
+            <div class="logo-row">
+              <label class="logo-drop" id="logoDrop">
+                <span id="logoText">+ 上传 logo</span>
+                <input type="file" id="logoInput" accept="image/*" />
+              </label>
+              <button class="btn btn-ghost" id="logoClear" type="button" hidden>清除</button>
+            </div>
+            <span class="hint">建议方形 PNG;加 logo 后自动提到最高容错。</span>
+          </div>
+        </div>
+        <div class="qr-preview">
+          <div class="qr-canvas" id="qrCanvas"></div>
+          <div class="qr-actions">
+            <button class="btn btn-primary" id="dlPng" type="button">下载 PNG</button>
+            <button class="btn btn-ghost" id="dlSvg" type="button">下载 SVG</button>
+          </div>
+          <div class="statusline" id="status" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <p class="notice">二维码在你的浏览器本地生成,内容(网址 / 文字)被直接编码进图片,不经过任何服务器、不会过期;logo 也只在本地合成。</p>
+    </section>
+
+    <aside class="ad" aria-label="广告"><span class="ad-tag">广告位 · Ad Slot</span></aside>
+
+    <section class="block" id="how">
+      <span class="kicker">HOW IT WORKS</span>
+      <h2>静态二维码,扫一次少一次中转</h2>
+      <p class="lede">很多在线二维码其实是<strong>“活码”</strong>——图片指向生成网站的服务器,扫描时再跳转到你的真实地址。一旦对方停服、改规则或收费,你印出去的码就<strong>集体失效</strong>。这个工具生成的是<strong>静态码</strong>:你的内容被直接编码进图案本身,扫描不经任何服务器、<strong>永久有效</strong>,而且全程在浏览器本地完成、不上传。</p>
+      <div class="steps">
+        <div class="step"><h3>输入内容</h3><p>网址、文字、电话、Wi-Fi 等都行,二维码实时预览。</p></div>
+        <div class="step"><h3>调样式</h3><p>换前景 / 背景色、码点样式,可加中心 logo,自动提高容错。</p></div>
+        <div class="step"><h3>下载使用</h3><p>导出高清 PNG 或可无损放大的矢量 SVG,印刷、网页都清晰。</p></div>
+      </div>
+    </section>
+
+    <section class="block" id="faq">
+      <span class="kicker">FAQ</span>
+      <h2>常见问题</h2>
+      <div class="faq">
+        <details open><summary>怎么免费生成二维码?</summary><div class="ans">在输入框填网址或文字,二维码实时生成。可换前景 / 背景色、码点样式、加中心 logo,然后下载 PNG 或 SVG。免费、无水印、不限次数、无需注册。</div></details>
+        <details><summary>生成的二维码会过期吗?</summary><div class="ans">不会。这里生成的是静态二维码——你的内容被直接编码进图片本身,扫描时不经过任何中转服务器,所以永久有效,即使本站关闭,已下载的码照样能扫。这和很多平台的“活码”(指向它家服务器再跳转、停服或收费后失效)不同。</div></details>
+        <details><summary>能加 logo 吗?加了还能扫出来吗?</summary><div class="ans">能。上传方形 logo 会合成到中心,并自动把容错提到最高(H),多数情况仍可正常扫描。建议 logo 不要过大、前景与背景对比足够,生成后用手机实扫一下确认。</div></details>
+        <details><summary>我输入的内容和 logo 会被上传吗?</summary><div class="ans">不会。二维码完全在你的浏览器本地生成,输入的网址 / 文字和上传的 logo 都不会发送到服务器,适合内部链接、内网地址等敏感内容。</div></details>
+      </div>
+    </section>
+
+    <aside class="ad" aria-label="广告"><span class="ad-tag">广告位 · Ad Slot</span></aside>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="f-brand">
+        <b>二维码生成 · bodhi.tools</b>
+        <p>永久有效的静态二维码,带 logo 与自定义样式,全程在浏览器本地生成、不上传。</p>
+      </div>
+      <nav aria-label="相关">
+        <a href="https://bodhi.tools/tools">全部工具</a>
+        <a href="https://ocr.bodhi.tools">图片转文字</a>
+        <a href="https://cutout.bodhi.tools">在线抠图</a>
+      </nav>
+      <div class="copy mono">© <span id="year"></span> bodhi.tools · 本地生成 · 内容不上传、永不过期。</div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

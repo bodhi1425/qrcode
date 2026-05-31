@@ -1,0 +1,20 @@
+{
+  "name": "qrcode",
+  "private": true,
+  "version": "1.0.0",
+  "description": "二维码生成器 — 带 logo、自定义颜色样式，本地生成、永不过期、不上传",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  },
+  "dependencies": {
+    "qr-code-styling": "^1.9.2"
+  }
+}
