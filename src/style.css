@@ -556,3 +556,19 @@ textarea:focus { border-color: var(--pine); box-shadow: 0 0 0 3px var(--pine-tin
   background-position: 0 0, 11px 11px;
 }
 .cp input:disabled { opacity: .4; cursor: not-allowed; }
+
+/* 内容类型表单 */
+.type-panels { margin-top: 2px; }
+.type-panel .ff { margin-bottom: 10px; }
+.type-panel .ff:last-of-type { margin-bottom: 0; }
+.type-panel input[type=text], .type-panel textarea { width: 100%; min-width: 0; }
+.ff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 480px) { .ff-grid { grid-template-columns: 1fr; } }
+.ff-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 4px; }
+.type-panel .hint { display: block; margin-top: 8px; }
+
+/* 图标分组 */
+.icon-group { margin-bottom: 14px; }
+.icon-group:last-child { margin-bottom: 0; }
+.icon-group-label { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--ink-faint); margin-bottom: 8px; }
+.input-disabled, input[type=text]:disabled { opacity: .45; cursor: not-allowed; }
