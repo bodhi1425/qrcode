@@ -99,6 +99,16 @@ function encodeUrl(raw: string): string {
 }
 function wifiEsc(s: string): string { return s.replace(/([\\;,:"])/g, '\\$1'); }
 
+// qr-code-styling 底层默认按 charCode & 0xff 截断, 中文 / é 等会乱码。
+// 先转 UTF-8 字节、再用 fromCharCode 重组成字符串, 让库的截断正好还原出 UTF-8 字节。
+// 纯 ASCII 内容(如网址)经此转换不变。
+function toUtf8(s: string): string {
+  const bytes = new TextEncoder().encode(s);
+  let out = '';
+  for (let i = 0; i < bytes.length; i++) out += String.fromCharCode(bytes[i]);
+  return out;
+}
+
 function encodeContent(): string {
   switch (contentType) {
     case 'wifi': {
@@ -112,13 +122,13 @@ function encodeContent(): string {
       const name = val('#vcName').trim(), org = val('#vcOrg').trim(), title = val('#vcTitle').trim();
       const tel = val('#vcTel').trim(), email = val('#vcEmail').trim(), url = val('#vcUrl').trim();
       if (!name && !tel && !email) return '';
-      let v = 'BEGIN:VCARD\nVERSION:3.0\n';
-      if (name) v += `N:${name};;;;\nFN:${name}\n`;
-      if (org) v += `ORG:${org}\n`;
-      if (title) v += `TITLE:${title}\n`;
-      if (tel) v += `TEL;TYPE=CELL:${tel}\n`;
-      if (email) v += `EMAIL:${email}\n`;
-      if (url) v += `URL:${url}\n`;
+      let v = 'BEGIN:VCARD\r\nVERSION:3.0\r\n';
+      if (name) v += `N:${name};;;;\r\nFN:${name}\r\n`;
+      if (org) v += `ORG:${org}\r\n`;
+      if (title) v += `TITLE:${title}\r\n`;
+      if (tel) v += `TEL;TYPE=CELL:${tel}\r\n`;
+      if (email) v += `EMAIL:${email}\r\n`;
+      if (url) v += `URL:${url}\r\n`;
       return v + 'END:VCARD';
     }
     case 'tel': {
@@ -152,8 +162,8 @@ function buildOptions(data: string): any {
     width: 1024,
     height: 1024,
     type: 'canvas',
-    data: data || 'https://bodhi.tools',
-    margin: 40,
+    data: toUtf8(data || 'https://bodhi.tools'),
+    margin: 64,
     qrOptions: { errorCorrectionLevel: state.ecc },
     image: logoData,
     dotsOptions: { type: state.dot, ...dotsColor },
